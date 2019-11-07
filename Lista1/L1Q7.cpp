@@ -1,32 +1,42 @@
 #include <iostream>
+#include <cstdio>
+#include <cstdlib>
+#include <ctime>
+
 using namespace std;
+
 int main(){
-float a;
-char x;
-cout<<"Digite um valor para a: ";
-cin >> a;
-cout<<"Digite x se quiser finalizar o programa: ";
-cin >> x;
 
-while((a!=2)&&(x!='x')) {
-     
-if((a >=10)||(a<=-10)){
+    int palpite;
+    int num;
 
-cout<<"Palpite muito longe\n";
+    srand(5);
 
-} else { 
+    num=rand()%20;
 
-cout<<"Palpite muito perto\n"; }
-cout<<"Digite outro valor para a: ";
-cin >> a;
+    cout<<"Chute um número,entre 0 e 20, se quiser sair digite x: ";
+    cin>>palpite;
 
-cout<<"Digite outro caractere para x caso queira continuar palpitando: ";
-cin >> x; }
+    while(palpite!=num){
 
-if(a==2){ 
-cout<<"Acertou o número";}
+       cout<<"Chute um número,entre 0 e 20, se quiser sair digite x: ";
+       cin>>palpite;
 
-if((x=='x')&&(a!=2)){ 
-cout<<"Programa finalizado";}
+       if((palpite==num)) break;
+    }
+    
 
-return 0;}
+    cout<<"o número aleaorio era "<< num<<endl;
+    
+    if(palpite==num){
+        cout<<"Você acertou!!"<<endl;
+    }else{
+         cout<<"Programa finalizado!!"<<endl;
+    }
+
+
+
+
+
+    return 0;
+}
